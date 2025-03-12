@@ -1,5 +1,10 @@
 package com.project.main;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class GraphGenerator {
 
     private static final String GRAY = "\u001B[90m";   // Gray color
@@ -7,9 +12,20 @@ public class GraphGenerator {
     private static final String BOLD = "\u001B[1m";    // Bold
     private static final String RESET = "\u001B[0m";   // Resets color/style
 
+    private List<int[]> edges = new ArrayList<>();
+    private Set<Integer> uniqueVertices = new HashSet<>();
+
     private String charSequence;
 
     // >> MAIN METHODS <<
+
+    public List<int[]> getEdges() {
+        return edges;
+    }
+
+    public Set<Integer> getUniqueVertices() {
+        return uniqueVertices;
+    }
 
     public GraphGenerator() {
     }
@@ -20,13 +36,34 @@ public class GraphGenerator {
 
     public void addCharSequence(String charSequence) {
         this.charSequence = charSequence;
+        parseEdges();
     }
+
 
     public String getMatrix() {
         return buildMatrix();
     }
 
     // >> UTILITY METHODS <<
+
+    private void parseEdges() {
+        edges.clear();
+        uniqueVertices.clear();
+
+        if (charSequence == null || charSequence.isEmpty()) {
+            return;
+        }
+
+        String[] pairs = charSequence.split(", ");
+        for (String pair : pairs) {
+            String[] vertex = pair.split(" ");
+            int v1 = Integer.parseInt(vertex[0]);
+            int v2 = Integer.parseInt(vertex[1]);
+            edges.add(new int[]{v1, v2});
+            uniqueVertices.add(v1);
+            uniqueVertices.add(v2);
+        }
+    }
 
     private String buildMatrix() {
 

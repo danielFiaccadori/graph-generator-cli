@@ -1,5 +1,7 @@
 package com.project.main;
 
+import javax.swing.*;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -18,6 +20,17 @@ public class Main {
         generator.addCharSequence(charSequence);
 
         System.out.println("\n>> GENERATED MATRIX <<\n\n" + generator.getMatrix());
+
+        try {
+            System.out.println("Generating visual graph...");
+            Thread.sleep(3000);
+            SwingUtilities.invokeLater(() ->
+                    new GraphFrame(generator.getEdges(), generator.getUniqueVertices()).setVisible(true)
+            );
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
