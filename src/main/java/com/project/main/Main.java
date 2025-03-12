@@ -32,6 +32,7 @@ public class Main {
         }
 
         System.out.println("\n-- THANK YOU FOR USING THE GRAPH GENERATOR :D --\n");
+
         System.out.println("Daniel Simões Fiaccadori Borborema");
         System.out.println("Kaique Freire dos Santos");
 
