@@ -12,6 +12,7 @@ public class Main {
         String charSequence;
 
         Scanner sc = new Scanner(System.in);
+
         System.out.println("Type a char sequence here: ");
         charSequence = sc.nextLine();
         generator.addCharSequence(charSequence);
