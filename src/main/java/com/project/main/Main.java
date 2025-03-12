@@ -1,5 +1,7 @@
 package com.project.main;
 
+import com.sun.jdi.IntegerType;
+
 import javax.swing.*;
 import java.util.Objects;
 import java.util.Scanner;
@@ -15,8 +17,9 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Type a char sequence here: ");
+        System.out.println("Type a char sequence below: ");
         charSequence = sc.nextLine();
+
         generator.addCharSequence(charSequence);
 
         System.out.println("\n>> GENERATED MATRIX <<\n\n" + generator.getMatrix());
