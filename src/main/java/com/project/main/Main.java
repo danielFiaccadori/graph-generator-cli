@@ -1,9 +1,6 @@
 package com.project.main;
 
-import com.sun.jdi.IntegerType;
-
 import javax.swing.*;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -35,9 +32,5 @@ public class Main {
         }
 
         System.out.println("\n-- THANK YOU FOR USING THE GRAPH GENERATOR :D --\n");
-
-        System.out.println("Daniel Simões Fiaccadori Borborema");
-        System.out.println("Kaique Freire dos Santos");
-
     }
 }
